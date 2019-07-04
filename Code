@@ -1,0 +1,48 @@
+# Testing the values out for the ELE 404 deisign project
+
+# Importing the Math Library
+import math
+
+# Welcoming the user and introducing what we will be exploring
+print("Welcome!! Today we will be calculating the roots of a quadratic.")
+
+# Getting values from user & looping to make sure the user enters only 3 values
+val_list = list(map(float, input("\nPlease enter ONLY 3 values and seperate the values for a, b, and c, with a single space: ").split()))
+check = None
+
+while( check != True ):
+
+    if( len(val_list) == 3):
+        check = True
+        print("List:", val_list)
+    else:
+        val_list = list(map(float, input("\nPlease enter ONLY 3 values and seperate the values for a, b, and c, with a single space: ").split()))
+
+# Setting the values for a, b, c, and the discriminant
+a = val_list[0]
+b = val_list[1]
+c = val_list[2]
+discrim = math.pow(b,2) - (4 * a * c)
+
+# Catchng any math errors if they occur & printing out the results
+try:
+    x_1 = ( -float(b) + math.sqrt( discrim ) ) / (2 * a)
+    x_2 = ( -float(b) + math.sqrt( discrim ) ) / (2 * a)
+
+    print("\nOne of the roots is:", x_1)
+    print("One of the roots is:", x_2)
+except ValueError:
+    print("\nThe values you have entered led to a negative discriminant, hence the square root cannot be taken.", end=" ")
+    print("Your quadratic, therefore has no real roots.")
+
+# Calculating the imaginary roots
+    print("\nCalculating the imaginary roots:")
+    tempDiscrim = math.sqrt(-1 * discrim) / (2 * a)
+    x_1 =  -float(b) / ( 2 * a )
+    x_2 =  -float(b) / ( 2 * a )
+
+    print("One of the roots is:", x_1, "+", tempDiscrim, "i")
+    print("One of the roots is:", x_2, "-", tempDiscrim, "i")
+
+# End of the program
+print("\nThis concludes the program.")
