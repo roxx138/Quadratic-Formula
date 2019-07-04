@@ -31,6 +31,7 @@ try:
 
     print("\nOne of the roots is:", x_1)
     print("One of the roots is:", x_2)
+    
 except ValueError:
     print("\nThe values you have entered led to a negative discriminant, hence the square root cannot be taken.", end=" ")
     print("Your quadratic, therefore has no real roots.")
